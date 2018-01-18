@@ -78,6 +78,7 @@
                             <constraint firstItem="YmN-8l-eCE" firstAttribute="top" secondItem="NDN-Fq-o1V" secondAttribute="top" id="BIh-El-lq3"/>
                             <constraint firstAttribute="trailing" secondItem="YmN-8l-eCE" secondAttribute="trailing" id="p3q-eA-Ob5"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Flw-2d-iZd"/>
                     </view>
                     <connections>
                         <outlet property="menuBtn" destination="Gjs-Pe-ckV" id="6kN-H4-aSG"/>
@@ -121,7 +122,7 @@
                                     <action selector="loginBtnPressed:" destination="ERl-H0-G8A" eventType="touchUpInside" id="WYQ-Wy-CMD"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QEY-pR-Alg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="QEY-pR-Alg" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="16" y="572" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="r0w-as-9Se"/>
@@ -175,9 +176,11 @@
                             <constraint firstItem="7as-Jh-cVJ" firstAttribute="leading" secondItem="48D-vH-PS3" secondAttribute="leadingMargin" id="wSe-mH-vKo"/>
                             <constraint firstAttribute="trailing" secondItem="ysJ-uT-pu8" secondAttribute="trailing" constant="72" id="yz5-0P-P7O"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mx7-MB-cRP"/>
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="0xV-IR-JiS" id="c8L-KH-PWV"/>
+                        <outlet property="userImg" destination="QEY-pR-Alg" id="Zbg-bR-DJb"/>
                         <segue destination="JC1-BI-bDi" kind="show" identifier="toLogin" id="ghI-mp-aka"/>
                     </connections>
                 </viewController>
@@ -298,6 +301,7 @@
                             <constraint firstItem="ERt-bq-3E8" firstAttribute="top" secondItem="ZvV-a3-R65" secondAttribute="topMargin" constant="60" id="sEW-0c-qm4"/>
                             <constraint firstItem="SIb-SE-az0" firstAttribute="centerX" secondItem="ZvV-a3-R65" secondAttribute="centerX" id="zo7-Nf-Ncn"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Bk-53-2Sb"/>
                     </view>
                     <connections>
                         <segue destination="Vri-Oy-0YT" kind="show" identifier="toCreateAccount" id="JIR-4G-bQ7"/>
@@ -405,7 +409,7 @@
                                     <action selector="createAccountPressed:" destination="Vri-Oy-0YT" eventType="touchUpInside" id="FzF-yp-3AT"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="sec-li-ypq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="sec-li-ypq" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="137.5" y="299" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="I8M-Go-tdc"/>
@@ -441,9 +445,14 @@
                                     <action selector="pickBGColorPressed:" destination="Vri-Oy-0YT" eventType="touchUpInside" id="IPy-b5-7RY"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Aif-Vg-kvC">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Aif-Vg-kvC" firstAttribute="centerY" secondItem="PHR-Uk-HQ3" secondAttribute="centerY" constant="-100" id="4Hz-UD-fBA"/>
                             <constraint firstItem="xVW-W5-dIc" firstAttribute="top" secondItem="aoV-hw-GBe" secondAttribute="bottom" constant="4" id="4Qp-bb-unv"/>
                             <constraint firstItem="s4t-s1-8Sn" firstAttribute="centerX" secondItem="PHR-Uk-HQ3" secondAttribute="centerX" id="88M-IP-g7c"/>
                             <constraint firstItem="xVW-W5-dIc" firstAttribute="centerX" secondItem="PHR-Uk-HQ3" secondAttribute="centerX" id="DIe-xa-GLI"/>
@@ -451,6 +460,7 @@
                             <constraint firstItem="aoV-hw-GBe" firstAttribute="centerX" secondItem="PHR-Uk-HQ3" secondAttribute="centerX" id="JYj-Rk-lfi"/>
                             <constraint firstItem="s4t-s1-8Sn" firstAttribute="top" secondItem="ewr-xz-adf" secondAttribute="bottom" constant="40" id="XVN-DS-ypE"/>
                             <constraint firstItem="ewr-xz-adf" firstAttribute="centerX" secondItem="PHR-Uk-HQ3" secondAttribute="centerX" id="YNG-j3-l6Y"/>
+                            <constraint firstItem="Aif-Vg-kvC" firstAttribute="centerX" secondItem="PHR-Uk-HQ3" secondAttribute="centerX" id="ZgA-Jh-x6j"/>
                             <constraint firstItem="aoV-hw-GBe" firstAttribute="top" secondItem="sec-li-ypq" secondAttribute="top" id="eRl-jP-dmU"/>
                             <constraint firstItem="MYj-b7-rmg" firstAttribute="centerX" secondItem="PHR-Uk-HQ3" secondAttribute="centerX" id="iQ3-h8-19R"/>
                             <constraint firstItem="ewr-xz-adf" firstAttribute="top" secondItem="PHR-Uk-HQ3" secondAttribute="topMargin" constant="40" id="jmz-go-eIY"/>
@@ -460,10 +470,12 @@
                             <constraint firstItem="sec-li-ypq" firstAttribute="centerX" secondItem="PHR-Uk-HQ3" secondAttribute="centerX" id="raA-pf-wT2"/>
                             <constraint firstItem="Fvx-U2-4X2" firstAttribute="top" secondItem="PHR-Uk-HQ3" secondAttribute="topMargin" constant="8" id="ts3-Ny-FT2"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z2c-pm-F1I"/>
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="ulT-7C-M6d" id="4L9-Bn-7nU"/>
                         <outlet property="passTxt" destination="Reh-px-1Dd" id="11n-eM-ViB"/>
+                        <outlet property="spinner" destination="Aif-Vg-kvC" id="It4-og-cWn"/>
                         <outlet property="userImg" destination="sec-li-ypq" id="5bh-YQ-ZpD"/>
                         <outlet property="usernameTxt" destination="6IS-Mg-1Po" id="TXB-d1-pi3"/>
                         <segue destination="PUr-Wm-8M5" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="ial-zV-cHh"/>
@@ -554,6 +566,7 @@
                             <constraint firstItem="Ydp-VU-AyX" firstAttribute="top" secondItem="MWH-oH-FQg" secondAttribute="topMargin" constant="8" id="fGw-Tn-BgH"/>
                             <constraint firstItem="lwV-IW-yEh" firstAttribute="top" secondItem="MWH-oH-FQg" secondAttribute="topMargin" constant="8" id="fVm-FA-piU"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="FpN-eJ-24c"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="gOs-Sa-tQj" id="VeD-7i-9sl"/>

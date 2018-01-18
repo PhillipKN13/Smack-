@@ -114,15 +114,15 @@ class AuthService {
             if response.result.error == nil {
                 guard let data = response.data else {return}
                 do {
-                    let json = try JSON(data: data)  //the type, data, is the JSON object that was return from the web request from SWIFTYJSON;
-                    let id = json["_id"].stringValue
-                    let color = json["avatarColor"].stringValue
-                    let avatarName = json["avatarName"].stringValue
-                    let email = json["email"].stringValue
-                    let name = json["name"].stringValue
+                let json = try JSON(data: data)  //the type, data, is the JSON object that was return from the web request from SWIFTYJSON;
+                let id = json["_id"].stringValue
+                let color = json["avatarColor"].stringValue
+                let avatarName = json["avatarName"].stringValue
+                let email = json["email"].stringValue
+                let name = json["name"].stringValue
                     
-                    UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
-                    completion(true) 
+                UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                completion(true)
                 }
                 catch {
                     print(error)
